@@ -1,7 +1,7 @@
 @extends('layout')
 @section('title', 'Authors Index')
 @section('content')
-<div id="root">
+<div id="author-root">
     <table class="table">
         <thead class="thead-dark">
           <tr>

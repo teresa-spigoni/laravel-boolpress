@@ -1,4 +1,12 @@
-#root{
+#root, #author-root{
     width: 1200px;
-    margin: 0 auto;
+    margin: 50px auto;
+}
+
+#author-root img{
+    width: 80px;
+}
+
+#root img{
+    width: 200px;
 }
