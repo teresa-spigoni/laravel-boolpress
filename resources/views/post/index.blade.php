@@ -11,6 +11,7 @@
             <th scope="col">Content</th>
             <th scope="col">Author</th>
             <th scope="col">n_Comments</th>
+            <th scope="col">Tags</th>
           </tr>
         </thead>
         <tbody>
@@ -25,6 +26,11 @@
                     <td>{{$post->content}}</td>
                     <td>{{$post->author->name}} {{$post->author->surname}}</td>
                     <td>{{count($post->comments)}}</td>
+                    <td>
+                        @foreach ($post->tags as $tag)
+                            {{$tag->name}} <br>
+                        @endforeach
+                    </td>
                 </tr>
 
             @endforeach
