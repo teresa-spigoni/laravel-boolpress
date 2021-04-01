@@ -3,7 +3,7 @@
 @section('content')
 
 
-<form action="{{route('posts.store')}}" method="POST">
+<form action="{{route('posts.store')}}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('POST')
     <div class="form-group">
@@ -16,7 +16,7 @@
     </div>
     <div class="form-group">
         <label for="pic">Pic</label>
-        <input type="text" class="form-control" name="pic" id="pic" placeholder="Pic URL">
+        <input type="file" class="form-control" name="pic" id="pic" placeholder="Pic URL">
     </div>
     <div class="form-group">
         <label for="author_id">Author</label>

@@ -6,6 +6,8 @@ use App\Post;
 use App\Author;
 use App\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\PostCreated;
 
 class PostController extends Controller
 {
@@ -41,7 +43,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-
+        $path = $request->file('pic')->store('public');
         $author_id = $data['author_id'];
 
         if(!Author::find($author_id)){
@@ -50,9 +52,13 @@ class PostController extends Controller
 
         $post = new Post();
         $post->fill($data);
+        $post->pic = $path;
         $post->save();
 
         $post->tags()->attach($data['tags']);
+
+        $mail = new PostCreated($post);
+        Mail::to('theexamplemail@example.it')->send($mail);
 
         return redirect()->route('posts.index');
     }
