@@ -1,13 +1,12 @@
 
 <body style="padding: 20px;">
 
-    <h1>E' stato creato un nuovo post!</h1>
+    <h1>A new post has been created!</h1> <br> <br>
 
-    <div style="border: 1px solid #000; padding: 20px; margin: 10px">
-        <h2>{{$post->title}}</h2>
-        <img src="{{$post->pic}}"> <br><br>
-        <p>{{$post->content}}</p> <br>
-        <i>{{$post->author->name}} {{$post->author->surname}}</i>
+    <div style="min-width:200px; padding: 0 20px 20px 20px; margin: 10px">
+        <h2>Post title: {{$post->title}}</h2>
+        <p>Post content: {{$post->content}}</p>
+        Author: <i>{{$post->author->name}} {{$post->author->surname}}</i>
     </div>
 
 </body>

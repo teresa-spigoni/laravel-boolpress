@@ -10002,7 +10002,7 @@ h3 {
     border-color: #dee2e6;
   }
 }
-#root, #author-root {
+#root, #author-root, #create-root {
   width: 1200px;
   margin: 50px auto;
 }
@@ -10013,4 +10013,8 @@ h3 {
 
 #root img {
   width: 200px;
+}
+
+.create-pic {
+  height: 45px;
 }
